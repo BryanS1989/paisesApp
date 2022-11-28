@@ -1,38 +1,41 @@
-<nav>
+<header>
     <h2>Búsquedas</h2>
     <hr />
-    <!--
-        Con [routerLinkActiveOptions]="{ exact: true }" conseguimos que el primer link
-        no se quede activo puesto que coincide con el resto de rutas, de la misma manera
-        que en el AppRoutingModule indicamos pathMatch: 'full'.
 
-        El resto de rutas (region y capital) es como si tuvieran un espacio en blanco entre
-        el dominio y la url ("http://localhost:4200' '/region" o "http://localhost:4200' '/capital")
-    -->
-    <ul class="list-group">
-        <li
-            routerLink=""
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            class="list-group-item list-group-item-action"
-        >
-            Buscar País
-        </li>
+    <nav>
+        <!--
+            Con [routerLinkActiveOptions]="{ exact: true }" conseguimos que el primer link
+            no se quede activo puesto que coincide con el resto de rutas, de la misma manera
+            que en el AppRoutingModule indicamos pathMatch: 'full'.
 
-        <li
-            routerLink="region"
-            routerLinkActive="active"
-            class="list-group-item list-group-item-action"
-        >
-            Por Región
-        </li>
+            El resto de rutas (region y capital) es como si tuvieran un espacio en blanco entre
+            el dominio y la url ("http://localhost:4200' '/region" o "http://localhost:4200' '/capital")
+        -->
+        <ul class="list-group">
+            <li
+                routerLink=""
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="list-group-item list-group-item-action"
+            >
+                Buscar País
+            </li>
 
-        <li
-            routerLink="capital"
-            routerLinkActive="active"
-            class="list-group-item list-group-item-action"
-        >
-            Por Capital
-        </li>
-    </ul>
-</nav>
+            <li
+                routerLink="region"
+                routerLinkActive="active"
+                class="list-group-item list-group-item-action"
+            >
+                Por Región
+            </li>
+
+            <li
+                routerLink="capital"
+                routerLinkActive="active"
+                class="list-group-item list-group-item-action"
+            >
+                Por Capital
+            </li>
+        </ul>
+    </nav>
+</header>
