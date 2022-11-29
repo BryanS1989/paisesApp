@@ -2,3 +2,7 @@
 body {
     padding: 1rem 5rem;
 }
+
+.small-flag {
+    width: 50px;
+}
