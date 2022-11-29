@@ -3,59 +3,18 @@
 
     <hr />
 
-    <form
-        (ngSubmit)="buscar()"
-        autocomplete="off"
+    <app-pais-input></app-pais-input>
+
+    <div
+        *ngIf="hayError"
+        class="mt-3 alert alert-danger"
     >
-        <input
-            type="search"
-            name="termino"
-            placeholder="Buscar país..."
-            class="form-control"
-            [(ngModel)]="termino"
-        />
-        <div
-            *ngIf="hayError"
-            class="mt-3 alert alert-danger"
-        >
-            No se encontró nada con el término "{{ termino }}"
-        </div>
-    </form>
+        No se encontró nada con el término "{{ termino }}"
+    </div>
 </header>
 
 <article class="mt-3">
     <section>
-        <table
-            *ngIf="paises.length > 0"
-            class="table table-hover table-striped align-middle"
-        >
-            <thead>
-                <th>#</th>
-                <th>Bandera</th>
-                <th>Nombre</th>
-                <th>Población</th>
-                <th></th>
-            </thead>
-            <tbody class="table-group-divider">
-                <tr *ngFor="let pais of paises; let i = index">
-                    <td>{{ i + 1 }}</td>
-                    <td>
-                        <img
-                            class="small-flag"
-                            [src]="pais.flags.svg"
-                        />
-                    </td>
-                    <td>{{ pais.name.common }}</td>
-                    <td>{{ pais.population | number }}</td>
-                    <td>
-                        <a
-                            [routerLink]="['/pais', pais.cca2]"
-                            routerLinkActive="router-link-active"
-                            >Ver...</a
-                        >
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
     </section>
 </article>
