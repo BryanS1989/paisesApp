@@ -5,4 +5,5 @@ body {
 
 .small-flag {
     width: 50px;
+    border: 1px grey solid;
 }
