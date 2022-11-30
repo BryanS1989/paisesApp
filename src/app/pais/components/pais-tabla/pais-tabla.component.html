@@ -7,6 +7,7 @@
         <th>Bandera</th>
         <th>Nombre</th>
         <th>Población</th>
+        <th>Capital</th>
         <th></th>
     </thead>
     <tbody class="table-group-divider">
@@ -22,6 +23,9 @@
             </td>
             <td>{{ pais.name.common }}</td>
             <td>{{ pais.population | number }}</td>
+            <td>
+                {{ pais.capital && pais.capital.length ? pais.capital[0] : '' }}
+            </td>
             <td>
                 <a
                     [routerLink]="['/pais', pais.cca2]"
