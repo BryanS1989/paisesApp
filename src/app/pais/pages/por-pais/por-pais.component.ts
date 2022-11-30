@@ -10,9 +10,10 @@ import { PaisService } from '../../services/pais.service';
 })
 export class PorPaisComponent {
 
+    public paises: Country[] = [];
     public termino: string = '';
     public hayError: boolean = false;
-    public paises: Country[] = [];
+    public placeholder: string = "Buscar País...";
 
     constructor(private paisService: PaisService) { }
 

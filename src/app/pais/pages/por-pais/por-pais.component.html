@@ -4,6 +4,7 @@
     <hr />
 
     <app-pais-input
+        [placeholder]="placeholder"
         (onEnter)="buscar($event)"
         (onDebounce)="sugerencias($event)"
     ></app-pais-input>
