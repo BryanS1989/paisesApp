@@ -1,1 +1,23 @@
-<p>por-capital works!</p>
+<header>
+    <h2>Por Capital</h2>
+
+    <hr />
+
+    <app-pais-input
+        [placeholder]="placeholder"
+        (onEnter)="buscar($event)"
+    ></app-pais-input>
+
+    <div
+        *ngIf="hayError"
+        class="mt-3 alert alert-danger"
+    >
+        No se encontró nada con el término "{{ termino }}"
+    </div>
+</header>
+
+<article class="mt-3">
+    <section>
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </section>
+</article>
