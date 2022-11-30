@@ -3,7 +3,10 @@
 
     <hr />
 
-    <app-pais-input (onEnter)="buscar($event)"></app-pais-input>
+    <app-pais-input
+        (onEnter)="buscar($event)"
+        (onDebounce)="sugerencias($event)"
+    ></app-pais-input>
 
     <div
         *ngIf="hayError"
