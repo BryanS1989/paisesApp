@@ -36,4 +36,10 @@ export class PorPaisComponent {
                 }
             });
     }
+
+    sugerencias(termino: string) {
+        console.log("[PaisModule] [PorPaisComponent] [sugerencias()] termino: ", termino);
+        this.hayError = false;
+        // TODO: Create suggestions
+    }
 }
