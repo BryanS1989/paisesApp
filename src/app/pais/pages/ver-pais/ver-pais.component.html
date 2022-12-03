@@ -1,1 +1,81 @@
-<p>ver-pais works!</p>
+<article>
+    <section
+        *ngIf="!pais; else templatePais"
+        class="alert alert-info"
+    >
+        Espere por favor...
+    </section>
+    <ng-template #templatePais>
+        <section class="card">
+            <img
+                class="card-img-top p-3"
+                [src]="pais.flags.svg"
+                [alt]="pais.name.common"
+                [title]="pais.name.common"
+            />
+            <h2 class="card-title border-bottom text-center p-2">
+                {{ pais.name.common }}
+            </h2>
+
+            <dl class="p-3">
+                <dt>Continente</dt>
+                <dd>
+                    <p class="m-0">
+                        {{ pais.continents[0] }}
+                    </p>
+                </dd>
+
+                <dt>Capital</dt>
+                <dd>
+                    <p class="m-0">
+                        {{ pais.capital[0] }}
+                    </p>
+                </dd>
+
+                <dt>Población</dt>
+                <dd>
+                    <p class="m-0">
+                        {{ pais.population | number }}
+                    </p>
+                </dd>
+
+                <dt>Código Alpha2</dt>
+                <dd>
+                    <p class="m-0">
+                        {{ pais.cca2 }}
+                    </p>
+                </dd>
+
+                <dt>Código Alpha3</dt>
+                <dd>
+                    <p class="m-0">
+                        {{ pais.cca3 }}
+                    </p>
+                </dd>
+
+                <dt>Código numérico</dt>
+                <dd>
+                    <p class="m-0">
+                        {{ pais.ccn3 }}
+                    </p>
+                </dd>
+
+                <dt>Traducciones</dt>
+                <dd>
+                    <ul>
+                        <li *ngFor="let traduccion of translations">
+                            {{ traduccion.common }}
+                        </li>
+                    </ul>
+                </dd>
+
+                <!--
+                    <dt>JSON INFO</dt>
+                    <dd>
+                        {{ pais | json }}
+                    </dd>
+                -->
+            </dl>
+        </section>
+    </ng-template>
+</article>

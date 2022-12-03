@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PaisService } from '../../services/pais.service';
 
-import { switchMap } from 'rxjs/operators';     // Switchmap nos permite recibir un observable y retornar otro observable
+// Switchmap: nos permite recibir un observable y retornar otro observable
+// Tap: es un operador que dispara un efecto secundario
+import { switchMap, tap } from 'rxjs/operators';
+import { Country, Translation } from '../../interfaces/pais.interface';
 
 @Component({
     selector: 'app-ver-pais',
@@ -11,6 +14,9 @@ import { switchMap } from 'rxjs/operators';     // Switchmap nos permite recibir
     ]
 })
 export class VerPaisComponent implements OnInit {
+
+    public pais!: Country;
+    public translations: Translation[] = [];
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -21,10 +27,13 @@ export class VerPaisComponent implements OnInit {
         // Nos subcribimos a los cambios de la ruta
         this.activatedRoute.params
             .pipe(  // dentro de pipe podemos especificar cualquier operador Rxjs para trabajar con el producto del observable
-                switchMap(({ id }) => this.paisService.getPaisPorAlpha(id))  // switchmap resibe el observable params y retorna otro observable
+                switchMap(({ id }) => this.paisService.getPaisPorAlpha(id)),  // switchmap resibe el observable params y retorna otro observable
+                tap(console.log)    // imprimimos lo que retorne switchmap
             )
             .subscribe((pais) => {
-                console.log("[PaisModule] [VerPaisComponent] [ngOnInit()] pais: ", pais);
+                console.log("[PaisModule] [VerPaisComponent] [ngOnInit()] pais: ", pais[0]);
+                this.pais = pais[0];
+                this.translations = Object.values(this.pais.translations);
             });
 
         /*
