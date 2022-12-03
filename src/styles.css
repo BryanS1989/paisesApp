@@ -7,3 +7,21 @@ body {
     width: 50px;
     border: 1px grey solid;
 }
+
+ul {
+    list-style: none;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+}
+
+dd {
+    grid-column: 2 / 4;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+}
