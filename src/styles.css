@@ -8,6 +8,9 @@ body {
     border: 1px grey solid;
 }
 
+.card {
+    max-width: 50vw;
+}
 ul {
     list-style: none;
 }
