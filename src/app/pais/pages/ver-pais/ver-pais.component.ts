@@ -5,7 +5,7 @@ import { PaisService } from '../../services/pais.service';
 // Switchmap: nos permite recibir un observable y retornar otro observable
 // Tap: es un operador que dispara un efecto secundario
 import { switchMap, tap } from 'rxjs/operators';
-import { Country, Translation } from '../../interfaces/pais.interface';
+import { Country, Currencies, Translation } from '../../interfaces/pais.interface';
 
 @Component({
     selector: 'app-ver-pais',
@@ -17,6 +17,7 @@ export class VerPaisComponent implements OnInit {
 
     public pais!: Country;
     public translations: Translation[] = [];
+    public currencies: Currencies[] = [];
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -34,6 +35,7 @@ export class VerPaisComponent implements OnInit {
                 console.log("[PaisModule] [VerPaisComponent] [ngOnInit()] pais: ", pais[0]);
                 this.pais = pais[0];
                 this.translations = Object.values(this.pais.translations);
+                this.currencies = Object.values(this.pais.currencies);
             });
 
         /*

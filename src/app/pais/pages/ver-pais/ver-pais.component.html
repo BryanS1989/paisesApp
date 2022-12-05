@@ -60,6 +60,15 @@
                     </p>
                 </dd>
 
+                <dt>Monedas</dt>
+                <dd>
+                    <ul>
+                        <li *ngFor="let currency of currencies">
+                            {{ currency.name }} ( {{ currency.symbol }} )
+                        </li>
+                    </ul>
+                </dd>
+
                 <dt>Traducciones</dt>
                 <dd>
                     <ul>
