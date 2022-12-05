@@ -8,7 +8,10 @@ export interface Country {
     independent: boolean;
     status: string;
     unMember: boolean;
-    currencies: Currencies;
+    currencies: {
+        [key: string
+        ]: Currencies
+    };
     idd: Idd;
     capital: string[];
     altSpellings: string[];
@@ -54,10 +57,6 @@ export interface CoatOfArms {
 }
 
 export interface Currencies {
-    EUR: Eur;
-}
-
-export interface Eur {
     name: string;
     symbol: string;
 }
