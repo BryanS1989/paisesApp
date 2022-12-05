@@ -8,16 +8,18 @@
     <ng-template #templatePais>
         <section class="card p-3">
             <img
-                class="card-img-top border"
+                class="card-img-top border animate__animated animate__jackInTheBox"
                 [src]="pais.flags.svg"
                 [alt]="pais.name.common"
                 [title]="pais.name.common"
             />
-            <h2 class="card-title border-bottom text-center p-2">
+            <h2
+                class="card-title border-bottom text-center p-2 animate__animated animate__flipInY"
+            >
                 {{ pais.name.common }}
             </h2>
 
-            <dl class="p-3">
+            <dl class="p-3 animate__animated animate__fadeInUpBig">
                 <dt>Continente</dt>
                 <dd>
                     <p class="m-0">

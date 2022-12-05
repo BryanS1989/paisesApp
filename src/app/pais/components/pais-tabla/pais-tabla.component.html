@@ -1,6 +1,6 @@
 <table
     *ngIf="paises.length > 0"
-    class="table table-hover table-striped align-middle"
+    class="table table-hover table-striped align-middle animate__animated animate__fadeInUpBig animate__faster"
 >
     <thead>
         <th>#</th>
@@ -15,7 +15,7 @@
             <td>{{ i + 1 }}</td>
             <td>
                 <img
-                    class="small-flag"
+                    class="small-flag animate__animated animate__bounceIn animate__delay-1s"
                     [src]="pais.flags.svg"
                     alt="Bandera de {{ pais.name.common }}"
                     [title]="pais.name.common"

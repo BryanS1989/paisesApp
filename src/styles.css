@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --animate-delay: 0.5s;
+}
+
 body {
     padding: 1rem 5rem;
 }
