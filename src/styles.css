@@ -17,12 +17,14 @@ body {
 }
 ul {
     list-style: none;
+    margin-bottom: 0;
 }
 
 dl {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.5rem;
+    margin-bottom: 0;
 }
 
 dd {
