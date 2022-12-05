@@ -9,6 +9,26 @@
         (onDebounce)="sugerencias($event)"
     ></app-pais-input>
 
+    <ul
+        *ngIf="mostrarSugerencias"
+        class="list-group"
+    >
+        <li
+            *ngIf="termino"
+            class="list-group-item list-group-item-action list-group-item-info animate__animated animate__flipInX"
+            (click)="buscarSugerencia(termino)"
+        >
+            Buscar "{{ termino }}"
+        </li>
+        <li
+            *ngFor="let paisSugerencia of paisesSugeridos"
+            class="list-group-item list-group-item-action animate__animated animate__flipInX"
+            [routerLink]="['/pais', paisSugerencia.cca2]"
+        >
+            {{ paisSugerencia.name.common }}
+        </li>
+    </ul>
+
     <div
         *ngIf="hayError"
         class="mt-3 alert alert-danger"
